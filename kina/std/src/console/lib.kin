@@ -1,0 +1,16 @@
+import { 
+  printInt,
+  printBool
+} from "../c/console.c"
+
+export func printInt(val: int): void {
+  printInt(val)
+
+  return
+}
+
+export func printBool(val: bool): void {
+  printBool(val)
+
+  return
+}
