@@ -8,3 +8,7 @@ void kina_lib_kina_std_console_printInt(int val) {
 void kina_lib_kina_std_console_printBool(bool val) {
   printf("(bool) %s\n", val ? "true" : "false");
 }
+
+void kina_lib_kina_std_console_printString(char* val) {
+  printf("(string) %s\n", val);
+}

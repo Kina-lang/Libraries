@@ -1,0 +1,3 @@
+export func pointer(value: string): ptr {
+  return value.___kina_internal.pointer
+}
