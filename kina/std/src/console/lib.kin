@@ -3,13 +3,13 @@ import {
   kina_lib_kina_std_console_printBool
 } from extern "../c/console.c"
 
-func printInt(value: int): void {
+export func printInt(value: int): void {
   kina_lib_kina_std_console_printInt(value)
 
   return
 }
 
-func printBool(value: bool): void {
+export func printBool(value: bool): void {
   kina_lib_kina_std_console_printBool(value)
 
   return
