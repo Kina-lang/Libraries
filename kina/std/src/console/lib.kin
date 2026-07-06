@@ -1,16 +1,16 @@
 import { 
-  printInt,
-  printBool
+  kina_lib_kina_std_console_printInt,
+  kina_lib_kina_std_console_printBool
 } from extern "../c/console.c"
 
 func printInt(value: int): void {
-  printInt(value)
+  kina_lib_kina_std_console_printInt(value)
 
   return
 }
 
 func printBool(value: bool): void {
-  printBool(value)
+  kina_lib_kina_std_console_printBool(value)
 
   return
 }

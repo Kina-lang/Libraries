@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void printInt(int val) {
+void kina_lib_kina_std_console_printInt(int val) {
   printf("(int32) %d\n", val);
 }
 
-void printBool(bool val) {
+void kina_lib_kina_std_console_printBool(bool val) {
   printf("(bool) %s\n", val ? "true" : "false");
 }
