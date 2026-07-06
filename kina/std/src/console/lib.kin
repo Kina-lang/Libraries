@@ -1,7 +1,7 @@
 import { 
   printInt,
   printBool
-} from "../c/console.c"
+} from extern "../c/console.c"
 
 func printInt(value: int): void {
   printInt(value)
