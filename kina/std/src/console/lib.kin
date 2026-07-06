@@ -3,14 +3,14 @@ import {
   printBool
 } from "../c/console.c"
 
-func printInt(val: int): void {
-  printInt(val)
+func printInt(value: int): void {
+  printInt(value)
 
   return
 }
 
-func printBool(val: bool): void {
-  printBool(val)
+func printBool(value: bool): void {
+  printBool(value)
 
   return
 }
