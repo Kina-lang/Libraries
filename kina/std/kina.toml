@@ -2,4 +2,4 @@
 name = "std"
 author = "kina"
 version = "0.1.0"
-entry = "src/lib.kin"
+entry = "src/test.kin"

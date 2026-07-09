@@ -1,3 +1,20 @@
-export func pointer(value: string): ptr {
-  return value.___kina_internal.pointer
+import {
+  kina_lib_kina_std_types_ptrToInt,
+  kina_lib_kina_std_types_stringFromC
+} from extern "../c/types.c";
+
+export func stringToPointer(str: string): ptr {
+  return str.___kina_internal.pointer
+}
+
+export func pointerToInt(p: ptr): int {
+  return kina_lib_kina_std_types_ptrToInt(p);
+}
+
+export func stringFromC(c_str: ptr, length: int): string {
+  return kina_lib_kina_std_types_stringFromC(c_str, length);
+}
+
+export func stringLength(str: string): int {
+  return str.___kina_internal.length;
 }

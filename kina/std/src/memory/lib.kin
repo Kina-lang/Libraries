@@ -1,0 +1,28 @@
+import { 
+  kina_lib_kina_std_memory_alloc,
+  kina_lib_kina_std_memory_retain, 
+  kina_lib_kina_std_memory_release, 
+  kina_lib_kina_std_memory_free 
+} from extern "../c/memory.c"
+
+export func mem_alloc(size: int): ptr {
+  return kina_lib_kina_std_memory_alloc(size);
+}
+
+export func mem_retain(addr: ptr): void {
+  kina_lib_kina_std_memory_retain(addr);
+  
+  return
+}
+
+export func mem_release(addr: ptr): void {
+  kina_lib_kina_std_memory_release(addr);
+  
+  return
+}
+
+export func mem_free(addr: ptr): void {
+  kina_lib_kina_std_memory_free(addr);
+  
+  return
+}

@@ -1,0 +1,23 @@
+import { 
+  kina_lib_kina_std_fs_readFile,
+  kina_lib_kina_std_fs_writeFile
+} from extern "../c/fs.c"
+import { stringToPointer, stringLength } from "../types/lib.kin"
+
+export func readFile(path: string): string {
+  val pathPtr: ptr = stringToPointer(path);
+  val result: string = kina_lib_kina_std_fs_readFile(pathPtr);
+
+  // TODO: Handle error
+
+  return result
+}
+
+export func writeFile(path: string, content: string): void {
+  val pathPtr: ptr = stringToPointer(path);
+  val contentPtr: ptr = stringToPointer(content);
+  val result: bool = kina_lib_kina_std_fs_writeFile(pathPtr, contentPtr, stringLength(content));
+
+  // TODO: Handle error
+  return
+}
