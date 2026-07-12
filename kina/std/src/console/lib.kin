@@ -23,7 +23,7 @@ export struct IConsole {
   printString: (string) -> void,
 }
 
-exprot val console: IConsole = {
+export val console: IConsole = {
   printInt: printInt,
   printBool: printBool,
   printString: printString,
