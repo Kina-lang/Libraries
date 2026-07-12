@@ -1,0 +1,18 @@
+import { console, IConsole } from "./console/lib.kin"
+import { fs, IFS } from "./fs/lib.kin"
+import { memory, IMemory } from "./memory/lib.kin"
+import { types, ITypes } from "./types/lib.kin"
+
+export struct IStd {
+  console: IConsole,
+  fs: IFS,
+  memory: IMemory,
+  types: ITypes,
+}
+
+export val std: IStd = {
+  console: console,
+  fs: fs,
+  memory: memory,
+  types: types
+}

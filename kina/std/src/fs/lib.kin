@@ -21,3 +21,13 @@ export func writeFile(path: string, content: string): void {
   // TODO: Handle error
   return
 }
+
+export struct IFS {
+  readFile: (string) -> string,
+  writeFile: (string, string) -> void,
+}
+
+export val fs: IFS = {
+  readFile: readFile,
+  writeFile: writeFile,
+}

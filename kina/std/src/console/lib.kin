@@ -22,3 +22,15 @@ export func printString(value: string): void {
 
   return
 }
+
+export struct IConsole {
+  printInt: (int) -> void,
+  printBool: (bool) -> void,
+  printString: (string) -> void,
+}
+
+exprot val console: IConsole = {
+  printInt: printInt,
+  printBool: printBool,
+  printString: printString,
+}

@@ -18,3 +18,17 @@ export func stringFromC(c_str: ptr, length: int): string {
 export func stringLength(str: string): int {
   return str.___kina_internal.length;
 }
+
+export struct ITypes {
+  stringToPointer: (string) -> ptr,
+  pointerToInt: (ptr) -> int,
+  stringFromC: (ptr, int) -> string,
+  stringLength: (string) -> int,
+}
+
+export val types: ITypes = {
+  stringToPointer: stringToPointer,
+  pointerToInt: pointerToInt,
+  stringFromC: stringFromC,
+  stringLength: stringLength,
+}

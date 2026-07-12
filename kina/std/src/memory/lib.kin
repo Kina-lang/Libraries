@@ -26,3 +26,17 @@ export func mem_free(addr: ptr): void {
   
   return
 }
+
+export struct IMemory {
+  mem_alloc: (int) -> ptr,
+  mem_retain: (ptr) -> void,
+  mem_release: (ptr) -> void,
+  mem_free: (ptr) -> void,
+}
+
+export val memory: IMemory = {
+  mem_alloc: mem_alloc,
+  mem_retain: mem_retain,
+  mem_release: mem_release,
+  mem_free: mem_free,
+}
