@@ -19,7 +19,6 @@ export func writeFile(path: string, content: string): void {
   val result: bool = kina_lib_kina_std_fs_writeFile(pathPtr, contentPtr, stringLength(content));
 
   // TODO: Handle error
-  return
 }
 
 export struct IFS {

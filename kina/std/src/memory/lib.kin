@@ -11,20 +11,14 @@ export func mem_alloc(size: int): ptr {
 
 export func mem_retain(addr: ptr): void {
   kina_lib_kina_std_memory_retain(addr);
-  
-  return
 }
 
 export func mem_release(addr: ptr): void {
   kina_lib_kina_std_memory_release(addr);
-  
-  return
 }
 
 export func mem_free(addr: ptr): void {
   kina_lib_kina_std_memory_free(addr);
-  
-  return
 }
 
 export struct IMemory {
