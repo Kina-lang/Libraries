@@ -1,0 +1,23 @@
+import {
+  kina_lib_kina_std_stdio_stdout_print,
+  kina_lib_kina_std_stdio_stdout_printLine
+} from extern "../c/stdio/stdout.c"
+import { types } from "../types/lib.kin"
+
+export func print(value: string): void {
+  kina_lib_kina_std_stdio_stdout_print(types.stringToPointer(value))
+}
+
+export func printLine(value: string): void {
+  kina_lib_kina_std_stdio_stdout_printLine(types.stringToPointer(value))
+}
+
+export struct IStdioStdout {
+  print: (string) -> void,
+  printLine: (string) -> void,
+}
+
+export val stdout: IStdioStdout = {
+  print: print,
+  printLine: printLine,
+}

@@ -1,0 +1,24 @@
+import {
+  kina_lib_kina_std_stdio_stdin_read,
+  kina_lib_kina_std_stdio_stdin_readLine
+} from extern "../c/stdio/stdin.c"
+
+export func read(): string {
+  val character: string = kina_lib_kina_std_stdio_stdin_read();
+  return character;
+}
+
+export func readLine(): string {
+  val line: string = kina_lib_kina_std_stdio_stdin_readLine();
+  return line;
+}
+
+export struct IStdioStdin {
+  read: () -> string,
+  readLine: () -> string,
+}
+
+export val stdin: IStdioStdin = {
+  read: read,
+  readLine: readLine,
+}

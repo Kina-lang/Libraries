@@ -1,0 +1,12 @@
+import { stdout, IStdioStdout } from "./stdout.kin"
+import { stdin, IStdioStdin } from "./stdin.kin"
+
+export struct IStdio {
+  stdout: IStdioStdout,
+  stdin: IStdioStdin
+}
+
+export val stdio: IStdio = {
+  stdout: stdout,
+  stdin: stdin
+}

@@ -1,9 +1,11 @@
+import { stdio, IStdio } from "./stdio/lib.kin"
 import { console, IConsole } from "./console/lib.kin"
 import { fs, IFS } from "./fs/lib.kin"
 import { memory, IMemory } from "./memory/lib.kin"
 import { types, ITypes } from "./types/lib.kin"
 
 export struct IStd {
+  stdio: IStdio,
   console: IConsole,
   fs: IFS,
   memory: IMemory,
@@ -11,6 +13,7 @@ export struct IStd {
 }
 
 export val std: IStd = {
+  stdio: stdio,
   console: console,
   fs: fs,
   memory: memory,

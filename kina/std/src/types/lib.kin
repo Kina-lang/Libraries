@@ -1,6 +1,7 @@
 import {
   kina_lib_kina_std_types_ptrToInt,
-  kina_lib_kina_std_types_stringFromC
+  kina_lib_kina_std_types_stringFromC,
+  kina_lib_kina_std_types_intToString
 } from extern "../c/types.c";
 
 export func stringToPointer(str: string): ptr {
@@ -19,11 +20,43 @@ export func stringLength(str: string): int {
   return str.___kina_internal.length;
 }
 
+export func boolToInt(value: bool): int {
+  mut result: int = 0;
+
+  if (value) { 
+    result = 1
+  }
+
+  return result;
+}
+
+export func intToBool(value: int): bool {
+  mut result: bool = false;
+
+  if (value != 0) { result = true }
+  return result
+}
+
+export func boolToString(value: bool): string {
+  mut result: string = "false";
+
+  if (value) { result = "true" } 
+  return result;
+}
+
+export func intToString(value: int): string {
+  return kina_lib_kina_std_types_intToString(value);
+}
+
 export struct ITypes {
   stringToPointer: (string) -> ptr,
   pointerToInt: (ptr) -> int,
   stringFromC: (ptr, int) -> string,
   stringLength: (string) -> int,
+  boolToInt: (bool) -> int,
+  intToBool: (int) -> bool,
+  boolToString: (bool) -> string,
+  intToString: (int) -> string,
 }
 
 export val types: ITypes = {
@@ -31,4 +64,8 @@ export val types: ITypes = {
   pointerToInt: pointerToInt,
   stringFromC: stringFromC,
   stringLength: stringLength,
+  boolToInt: boolToInt,
+  intToBool: intToBool,
+  boolToString: boolToString,
+  intToString: intToString,
 }
