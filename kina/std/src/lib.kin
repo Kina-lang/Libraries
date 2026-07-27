@@ -3,6 +3,7 @@ import { console, IConsole } from "./console/lib.kin"
 import { fs, IFS } from "./fs/lib.kin"
 import { memory, IMemory } from "./memory/lib.kin"
 import { types, ITypes } from "./types/lib.kin"
+import { process, IProcess } from "./process/lib.kin"
 
 export struct IStd {
   stdio: IStdio,
@@ -10,6 +11,7 @@ export struct IStd {
   fs: IFS,
   memory: IMemory,
   types: ITypes,
+  process: IProcess,
 }
 
 export val std: IStd = {
@@ -17,5 +19,6 @@ export val std: IStd = {
   console: console,
   fs: fs,
   memory: memory,
-  types: types
+  types: types,
+  process: process,
 }

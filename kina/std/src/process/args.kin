@@ -1,0 +1,22 @@
+import {
+  kina_lib_kina_std_process_args_getAt,
+  kina_lib_kina_std_process_args_getCount
+} from extern "../c/process/args.c"
+
+export func getAt(index: int): string {
+  return kina_lib_kina_std_process_args_getAt(index);
+}
+
+export func getCount(): int {
+  return kina_lib_kina_std_process_args_getCount();
+}
+
+export struct IProcessArgs {
+  getAt: (int) -> string,
+  getCount: () -> int
+}
+
+export val args: IProcessArgs = {
+  getAt: getAt,
+  getCount: getCount
+}

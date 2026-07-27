@@ -1,0 +1,9 @@
+import { args, IProcessArgs } from "./args.kin"
+
+export struct IProcess {
+  args: IProcessArgs,
+}
+
+export val process: IProcess = {
+  args: args,
+}
