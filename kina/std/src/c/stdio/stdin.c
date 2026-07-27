@@ -1,5 +1,6 @@
 #include "kina.h"
 #include <stdio.h>
+#include <string.h>
 
 // Read single character from stdin and return it as a KinaString
 struct KinaString kina_lib_kina_std_stdio_stdin_read() {
@@ -27,22 +28,23 @@ struct KinaString kina_lib_kina_std_stdio_stdin_readLine() {
 
   char *buffer = kina_mem_alloc(n);
   if (!buffer) {
-    return (struct KinaString){
-        .data = NULL, .length = 0}; // Return empty string on allocation error
+    return (struct KinaString){.data = NULL, .length = 0};
   }
 
-  size_t bytes_read = getline(&buffer, &n, stdin);
-  if (bytes_read == -1) {
+  // fgets reads whole line, including \n and adds null terminator at the end
+  if (fgets(buffer, n, stdin) == NULL) {
     kina_mem_free(buffer);
-    return (struct KinaString){.data = NULL,
-                               .length = 0}; // Return empty string on error
+
+    return (struct KinaString){.data = NULL, .length = 0};
   }
 
-  // Remove the newline character if present
-  if (bytes_read > 0 && buffer[bytes_read - 1] == '\n') {
-    buffer[bytes_read - 1] = '\0';
-    bytes_read--;
+  size_t len = strlen(buffer);
+
+  // Remove '\n' at the end, if present
+  if (len > 0 && buffer[len - 1] == '\n') {
+    buffer[len - 1] = '\0';
+    len--;
   }
 
-  return (struct KinaString){.data = buffer, .length = (int)bytes_read};
+  return (struct KinaString){.data = buffer, .length = (int)len};
 }
